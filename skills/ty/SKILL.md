@@ -1,8 +1,6 @@
 ---
-description:
-  Guide for using ty, the extremely fast Python type checker and language
-  server. Use this when type checking Python code or setting up type checking in
-  Python projects.
+name: ty
+description: Guide for using ty, the extremely fast Python type checker and language server. Use when type checking Python code or setting up type checking in Python projects, especially when `[tool.ty]` or `ty.toml` is present.
 ---
 
 # ty
@@ -88,8 +86,8 @@ possibly-unresolved-reference = "warn"
 
 ## Language server
 
-This plugin automatically configures the ty language server for Python files
-(`.py` and `.pyi`).
+ty also provides a language server via `ty server` (for example, `uvx ty@latest
+server`).
 
 ## Migrating from other tools
 

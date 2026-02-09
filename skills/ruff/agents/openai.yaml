@@ -1,0 +1,4 @@
+interface:
+  display_name: "Astral ruff"
+  short_description: "Use ruff for Python linting, formatting, and fixes"
+  default_prompt: "Use $ruff to lint, format, and safely auto-fix Python code with ruff."

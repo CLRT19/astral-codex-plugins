@@ -1,7 +1,6 @@
 ---
-description:
-  Guide for using uv, the Python package and project manager. Use this when
-  working with Python projects, scripts, packages, or tools.
+name: uv
+description: Guide for using uv, the Python package and project manager. Use when working with Python projects, scripts, packages, tools, or dependency management, especially when `uv.lock` exists or requirements files include uv-generated headers.
 ---
 
 # uv

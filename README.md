@@ -1,69 +1,66 @@
-# Astral plugins for Claude Code
+# Astral Codex Skills
+
+This repository provides Codex skills for Astral's Python tools:
+
+- `uv` (package and project management)
+- `ruff` (linting and formatting)
+- `ty` (type checking)
 
 ## Installation
 
-### Add the marketplace
-
-Add the Astral marketplace to Claude Code:
-
-```bash
-/plugin marketplace add astral-sh/claude-code-plugins
-```
-
-### Install the `astral` plugin
-
-After adding the marketplace:
+Install the skills into your Codex skills directory (`$CODEX_HOME/skills`, or
+`~/.codex/skills` by default):
 
 ```bash
-/plugin install astral@astral-sh
+CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+mkdir -p "$CODEX_HOME/skills"
+
+cp -R skills/uv "$CODEX_HOME/skills/"
+cp -R skills/ruff "$CODEX_HOME/skills/"
+cp -R skills/ty "$CODEX_HOME/skills/"
 ```
 
-Or browse and install interactively:
+If you are developing this repository, symlink instead of copying:
 
 ```bash
-/plugin
+CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+mkdir -p "$CODEX_HOME/skills"
+
+ln -sfn "$PWD/skills/uv" "$CODEX_HOME/skills/uv"
+ln -sfn "$PWD/skills/ruff" "$CODEX_HOME/skills/ruff"
+ln -sfn "$PWD/skills/ty" "$CODEX_HOME/skills/ty"
 ```
 
-### Team installation
-
-For team-wide plugin usage, add to your project's `.claude/settings.json`:
-
-```json
-{
-  "extraKnownMarketplaces": {
-    "astral-sh": {
-      "source": {
-        "source": "github",
-        "repo": "astral-sh/claude-code-plugins"
-      }
-    }
-  },
-  "enabledPlugins": {
-    "astral@astral-sh": true
-  }
-}
-```
-
-Team members will be prompted to install the plugin when they trust the
-repository.
+Restart Codex after installing or updating skills.
 
 ## Usage
 
-### Skills
+Use the skills by name in prompts:
 
-The plugin provides skills for Astral tools.
+- `$uv` for dependency management, environments, and script/project workflows
+- `$ruff` for linting, formatting, and auto-fixes
+- `$ty` for type checking and rule configuration
 
-Invoke skills with `/astral:<skill>`, e.g., `/astral:uv`.
+Example:
 
-Claude sometimes needs to be prompted to use skills. We recommend adding this
-instruction to your `CLAUDE.md`:
+```text
+Use $ruff and $ty to fix lint and type errors in this Python package.
+```
 
-> When working with Python, invoke the relevant `/astral:<skill>` for `uv`,
-> `ty`, and `ruff` to ensure best practices are followed.
+## Repository Layout
 
-### LSP
-
-The plugin also provides the ty LSP. It requires `uvx` to be available.
+```text
+skills/
+  uv/
+    SKILL.md
+    agents/openai.yaml
+  ruff/
+    SKILL.md
+    agents/openai.yaml
+  ty/
+    SKILL.md
+    agents/openai.yaml
+```
 
 ## License
 

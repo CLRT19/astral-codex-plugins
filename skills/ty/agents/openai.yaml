@@ -1,0 +1,4 @@
+interface:
+  display_name: "Astral ty"
+  short_description: "Use ty for Python type checking and rule configuration"
+  default_prompt: "Use $ty to run fast Python type checking and adjust ty rules for this project."

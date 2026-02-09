@@ -1,0 +1,4 @@
+interface:
+  display_name: "Astral uv"
+  short_description: "Use uv for Python projects and dependency management"
+  default_prompt: "Use $uv to manage Python dependencies, environments, and script execution with uv."

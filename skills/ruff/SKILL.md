@@ -1,7 +1,6 @@
 ---
-description:
-  Guide for using ruff, the extremely fast Python linter and formatter. Use this
-  when linting, formatting, or fixing Python code.
+name: ruff
+description: Guide for using ruff, the extremely fast Python linter and formatter. Use when linting, formatting, or fixing Python code, especially when `[tool.ruff]`, `ruff.toml`, or `.ruff.toml` is present.
 ---
 
 # ruff
